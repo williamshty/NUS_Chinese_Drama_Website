@@ -1,3 +1,4 @@
+[Click Here](https://williamshty.github.io/NUSChineseDrama/) to visit the built website
 # Source Code for Chinese Drama Website
 ![Chinese Drama](https://scontent-sit4-1.xx.fbcdn.net/v/t1.0-9/11825090_1483963691901143_6315355764220622427_n.jpg?oh=a8e91f6e9ad11367a8c70c521875a95b&amp;oe=5AE51AD3)
 
