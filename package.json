@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "compile:sass": "node-sass src/assets/sass/main.scss src/assets/css/style.css -w"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
@@ -61,7 +62,8 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "node-sass": "^4.7.2"
   },
   "engines": {
     "node": ">= 6.0.0",
