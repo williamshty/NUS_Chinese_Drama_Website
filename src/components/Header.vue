@@ -8,7 +8,7 @@
                     <span class="heading-primary--main">{{headerMain}}</span>
                     <span class="heading-primary--sub">{{headerSub}}</span>
                 </h1>
-              <a href="#" class="btn btn--white btn--animated">{{headerBtn}}</a>
+              <a href="#" class="btn btn--white btn--animated" v-scroll-to="'.heading-secondary'">{{headerBtn}}</a>
             </div>
   </div>
 </template>

@@ -115,12 +115,6 @@ body {
   padding: 15rem 0;
   margin-top: 0vh;
   position: relative; }
-  .section-about__locale-group {
-    position: absolute;
-    top: 4rem;
-    right: 4rem;
-    /* to centre the element */
-    text-align: center; }
 
 .btn {
   /* psudeo element is a child of the actual element ::after*/ }
@@ -194,7 +188,7 @@ body {
 .composition {
   position: relative; }
   .composition__photo {
-    width: 55%;
+    width: 52%;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
     border-radius: 2px;
     position: absolute;

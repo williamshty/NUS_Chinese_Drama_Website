@@ -69,7 +69,7 @@ export default {
     }
   },
   beforeMount () {
-    this.changeLocaleToEn()
+    this.changeLocaleToZh()
   }
 }
 </script>
