@@ -23,7 +23,7 @@ npm run build --report
 If the `background image is missing` after build. Change background picture path to `../img/*.jpg` after building.
 ***
 ### Built File Destination
-Please upload the files in `dist` folder to [this repository](https://github.com/williamshty/williamshty.github.io/tree/master/NUSChineseDrama)
+Please upload the files in `dist` folder to [this repository](https://github.com/NUSChineseDrama/NUSChineseDrama.github.io)
 ***
 ### Guide to use Vue.js
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
