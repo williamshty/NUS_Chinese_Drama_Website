@@ -1,7 +1,13 @@
 <template>
 <div>
-<chinese-drama-header></chinese-drama-header>
-<chinese-drama-home></chinese-drama-home>
+  <div class="title">
+      <div class="title__locale-group">
+             <a href="#" class="btn btn--white btn--animated btn--locale" @click="changeLocaleToZh()">中文</a>
+             <a href="#" class="btn btn--white btn--animated btn--locale" @click="changeLocaleToEn()">En</a>
+      </div>
+    </div>
+<chineseDramaHeader ref="pageHeader"></chineseDramaHeader>
+<chineseDramaHome ref="pageHome"></chineseDramaHome>
 </div>
 </template>
 <script>
@@ -13,6 +19,7 @@ export default {
   name: 'LandingPage',
   data () {
     return {
+      locale: ''
     }
   },
   components: {
@@ -29,14 +36,11 @@ export default {
       this.UpdateLocaleText()
     },
     UpdateLocaleText () {
-      var vm = this
-      if (vm.locale === 'en') {
-      } else if (vm.locale === 'zh') {
-      }
+      this.$refs.pageHeader.UpdateLocaleTextHeader(this.locale)
+      this.$refs.pageHome.UpdateLocaleTextHome(this.locale)
     }
   },
   beforeMount () {
-    this.changeLocaleToZh()
   }
 }
 </script>

@@ -3,5 +3,13 @@
         "headingMain" : "国大中文戏剧",
         "headingSub" : "创作 | 演绎 | 反思",
         "headingBtn" : "发现更多"
+    },
+    "home" : {
+        "homeTitle": "",
+        "paragraphHeading1": "",
+        "paragraphContent1": "",
+        "paragraphHeading2": "",
+        "paragraphContent2": "",
+        "learnMoreText": ""
     }
 }

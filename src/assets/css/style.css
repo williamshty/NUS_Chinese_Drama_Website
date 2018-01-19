@@ -77,7 +77,7 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right, #e45959, #690b0b);
+  background-image: linear-gradient(to right, #ec7373, #690b0b);
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: .2rem;
@@ -85,6 +85,8 @@ body {
   .heading-secondary:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .heading-secondary__no-clip {
+    margin-top: -40%; }
 
 .heading-tertiary {
   font-size: 1.6rem;
@@ -110,8 +112,15 @@ body {
 
 .section-about {
   background-color: #f7f7f7;
-  padding: 25rem 0;
-  margin-top: -20vh; }
+  padding: 15rem 0;
+  margin-top: 0vh;
+  position: relative; }
+  .section-about__locale-group {
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    /* to centre the element */
+    text-align: center; }
 
 .btn {
   /* psudeo element is a child of the actual element ::after*/ }
@@ -138,6 +147,11 @@ body {
     color: #777; }
     .btn--white::after {
       background-color: #fff; }
+  .btn--black {
+    background-color: #777;
+    color: #fff; }
+    .btn--black::after {
+      background-color: #777; }
   .btn--locale {
     padding: 1.5rem 2.5rem !important;
     font-size: 1rem !important; }
@@ -196,16 +210,27 @@ body {
       left: 20%;
       top: 10rem; }
     .composition__photo:hover {
-      outline: 1.5rem solid #333333;
+      outline: 1.5rem solid #C0392B;
       transform: scale(1.05) translateY(5px);
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
       z-index: 20; }
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.9); }
 
+.title {
+  position: relative;
+  background-color: transparent;
+  z-index: 20; }
+  .title__locale-group {
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    /* to centre the element */
+    text-align: center; }
+
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(228, 89, 89, 0.8), rgba(105, 11, 11, 0.8)), url(../img/background.jpg);
+  background-image: linear-gradient(to right bottom, rgba(236, 115, 115, 0.8), rgba(105, 11, 11, 0.8)), url(../img/background.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
@@ -222,12 +247,6 @@ body {
     left: 50%;
     /* to centre the element */
     transform: translate(-50%, 50%);
-    text-align: center; }
-  .header__locale-group {
-    position: absolute;
-    top: 4rem;
-    right: 4rem;
-    /* to centre the element */
     text-align: center; }
 
 .row {
