@@ -4,13 +4,18 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import vueScrollTo from 'vue-scroll-to'
-// import BootstrapVue from 'bootstrap-vue'
-// import 'bootstrap/dist/css/bootstrap.css'
-// import 'bootstrap-vue/dist/bootstrap-vue.css'
-// Vue.use(BootstrapVue)
+import VueQrcodeReader from 'vue-qrcode-reader'
+import axios from 'axios'
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap/dist/css/bootstrap.css'
+Vue.use(BootstrapVue)
+Vue.use(VueQrcodeReader)
 Vue.use(vueScrollTo)
 Vue.config.productionTip = false
-
+Vue.prototype.$http = axios
+Vue.prototype.$http.defaults.baseURL = 'http://localhost:8088/'
+console.log(Vue.prototype.$http.defaults.baseURL)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
