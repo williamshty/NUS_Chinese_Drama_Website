@@ -1,16 +1,16 @@
 <template>
 <div>
-      <b-modal title="Ticket Info" size="lg" ref="ticketInfoModal">
-        <h1>Your Submission ID is: {{submissionID}}</h1>
+      <!-- <b-modal title="Ticket Info" size="lg" ref="ticketInfoModal">
+      </b-modal> -->
+    <h1>Ticketing App For Rhinoceros In Love</h1>
+    <qrcode-reader @decode="onDecode" @locate="onLocate"></qrcode-reader>
+    <h1>Your Submission ID is: {{submissionID}}</h1>
         <!-- <b-button @click="getTicket(123123)">test</b-button> -->
         <h1>Name: {{name}}</h1>
         <h1>Show Time: {{showTime}}</h1>
         <h1>Number of Tix: {{numberOfTix}}</h1>
         <h1>Redeemed Ticket: {{redeemedTix}}</h1>
         <b-button @click="updateTicket(submissionID, redeemedTix)">Redeem</b-button>
-      </b-modal>
-    <h1>Ticketing App For Rhinoceros In Love</h1>
-    <qrcode-reader @decode="onDecode" @locate="onLocate"></qrcode-reader>
 </div>
 </template>
 <script>
@@ -49,7 +49,7 @@ export default {
             vm.showTime = response.data[0].showTime
             vm.numberOfTix = response.data[0].numberOfTix
             vm.redeemedTix = response.data[0].redeemedTix
-            vm.$refs.ticketInfoModal.show()
+            // vm.$refs.ticketInfoModal.show()
           }
         })
         .catch(function (error) {
@@ -61,12 +61,10 @@ export default {
     },
     updateTicket (submissionID, redeemedTix) {
       var vm = this
-      console.log(submissionID)
+      console.log(vm.submissionID)
       console.log(redeemedTix)
       vm.$http.put('updateTicket', {
-        params: {
-          submissionID: parseInt(submissionID)
-        },
+        submissionID: vm.submissionID,
         redeemedTix: parseInt(redeemedTix) + 1
       })
         .then(function (response) {
@@ -77,8 +75,8 @@ export default {
             vm.showTime = response.data[0].showTime
             vm.numberOfTix = response.data[0].numberOfTix
             vm.redeemedTix = response.data[0].redeemedTix
-            vm.$refs.ticketInfoModal.hide()
-            vm.$refs.ticketInfoModal.show()
+            // vm.$refs.ticketInfoModal.hide()
+            // vm.$refs.ticketInfoModal.show()
           }
         })
         .catch(function (error) {
