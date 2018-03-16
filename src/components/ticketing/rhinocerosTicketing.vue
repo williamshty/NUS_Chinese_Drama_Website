@@ -3,6 +3,10 @@
       <!-- <b-modal title="Ticket Info" size="lg" ref="ticketInfoModal">
       </b-modal> -->
     <h1>Ticketing App For Rhinoceros In Love</h1>
+    <b-form-group>
+      <b-form-input v-model="submissionID" type="number"></b-form-input>
+    </b-form-group>
+    <b-button size="lg" variant="warning" @click="getTicket(submissionID)">Find Ticket</b-button>
     <qrcode-reader @decode="onDecode" @locate="onLocate"></qrcode-reader>
     <h1>Your Submission ID is: {{submissionID}}</h1>
         <!-- <b-button @click="getTicket(123123)">test</b-button> -->
@@ -10,7 +14,11 @@
         <h1>Show Time: {{showTime}}</h1>
         <h1>Number of Tix: {{numberOfTix}}</h1>
         <h1>Redeemed Ticket: {{redeemedTix}}</h1>
-        <b-button @click="updateTicket(submissionID, redeemedTix)">Redeem</b-button>
+        <b-button size="lg" variant="success" @click="updateTicket(submissionID, redeemedTix)">Redeem</b-button>
+    <b-form-group style="margin-top:40px;">
+      <b-form-input v-model="redeemedTix" type="number" placeholder="input -1 if wish to reset"></b-form-input>
+    </b-form-group>
+    <b-button size="lg" variant="warning" @click="updateTicket(submissionID,redeemedTix)">Reset</b-button>
 </div>
 </template>
 <script>
@@ -23,7 +31,8 @@ export default {
       name: '',
       showTime: '',
       numberOfTix: '',
-      redeemedTix: ''
+      redeemedTix: '',
+      submissionID_manual: ''
     }
   },
   components: {
@@ -56,6 +65,7 @@ export default {
           if (error.response) {
             console.log('error response')
             console.log(error.response)
+            alert('Cannot Find Ticket')
           }
         })
     },
@@ -75,6 +85,7 @@ export default {
             vm.showTime = response.data[0].showTime
             vm.numberOfTix = response.data[0].numberOfTix
             vm.redeemedTix = response.data[0].redeemedTix
+            alert('Redeemed Successfully')
             // vm.$refs.ticketInfoModal.hide()
             // vm.$refs.ticketInfoModal.show()
           }
